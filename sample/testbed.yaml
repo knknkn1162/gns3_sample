@@ -1,0 +1,53 @@
+devices:
+  iosv_0:
+    connections:
+      a:
+        ip: 160.16.149.186
+        protocol: telnet
+        port: 6000
+      defaults:
+        class: unicon.Unicon
+    os: ios
+    platform: iosv
+    type: router
+  iosv_1:
+    connections:
+      a:
+        ip: 160.16.149.186
+        protocol: telnet
+        port: 6002
+      defaults:
+        class: unicon.Unicon
+    os: ios
+    platform: iosv
+    type: router
+  server_0:
+    connections:
+      a:
+        ip: 160.16.149.186
+        protocol: telnet
+        port: 6004
+      defaults:
+        class: unicon.Unicon
+    os: linux
+    type: linux
+  server_1:
+    connections:
+      a:
+        ip: 160.16.149.186
+        protocol: telnet
+        port: 6006
+      defaults:
+        class: unicon.Unicon
+    os: linux
+    type: linux
+  server_2:
+    connections:
+      a:
+        ip: 160.16.149.186
+        protocol: telnet
+        port: 6008
+      defaults:
+        class: unicon.Unicon
+    os: linux
+    type: linux
