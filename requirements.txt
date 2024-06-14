@@ -1,3 +1,2 @@
-virl2_client[pyats]
 pyats[full]
 python-dotenv
