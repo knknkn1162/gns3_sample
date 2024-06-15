@@ -70,6 +70,14 @@ r1.execs([
   [
     f"username {ini.r1.username} password {ini.r1.password}",
   ],
+])
+r2.execs([
+  [
+    f"username {ini.r2.username} password {ini.r2.password}",
+  ]
+])
+
+r1.execs([
   [
     f"interface {ini.r1.s0_0.name}",
     f"ppp authentication pap",
@@ -78,9 +86,6 @@ r1.execs([
 ])
 
 r2.execs([
-  [
-    f"username {ini.r2.username} password {ini.r2.password}",
-  ],
   [
     f"interface {ini.r2.s0_0.name}",
     f"ppp authentication pap",
