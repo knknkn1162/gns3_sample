@@ -95,3 +95,11 @@ r2.execs([
 
 # test ping
 calc.vpcs_ping(pc1, ini.pc2.eth0.ip_addr, count=15)
+
+r1.execs([
+  f"show interfaces {ini.r1.s0_0.name}",
+])
+
+r2.execs([
+  f"show interfaces {ini.r2.s0_0.name}",
+])
