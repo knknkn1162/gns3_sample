@@ -63,5 +63,30 @@ r2.execs([
 ])
 
 # test ping
-wait_until.seconds(3)
-calc.vpcs_ping(pc1, ini.pc2.eth0.ip_addr)
+calc.vpcs_ping(pc1, ini.pc2.eth0.ip_addr, count=15)
+
+# PAP settings
+r1.execs([
+  [
+    f"username {ini.r1.username} password {ini.r1.password}",
+  ],
+  [
+    f"interface {ini.r1.s0_0.name}",
+    f"ppp authentication pap",
+    f"ppp pap sent-username {ini.r2.username} password {ini.r2.password}",
+  ],
+])
+
+r2.execs([
+  [
+    f"username {ini.r2.username} password {ini.r2.password}",
+  ],
+  [
+    f"interface {ini.r2.s0_0.name}",
+    f"ppp authentication pap",
+    f"ppp pap sent-username {ini.r1.username} password {ini.r1.password}",
+  ],
+])
+
+# test ping
+calc.vpcs_ping(pc1, ini.pc2.eth0.ip_addr, count=15)
